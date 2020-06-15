@@ -124,9 +124,9 @@ img {
   text-align: center;
   position: relative;
   left: -10px;
+  color: #212529;
 }
-.credit {
-  font-style: none;
+.sourceLink {
   color: #212529;
 }
 .credit:hover {
