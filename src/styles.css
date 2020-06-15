@@ -129,8 +129,6 @@ img {
 .sourceLink {
   color: #212529;
 }
-.credit:hover {
+.sourceLink:hover {
   color: #ffe8de;
-  font-style: italic;
-  text-decoration: none;
 }
