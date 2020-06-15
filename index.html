@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather for Minimalists</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/58d8b490d0.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="weatherApp">
+            <header>
+                <section class="topLeft">
+                    <h1 class="currentCity" id="the-city">Orlando</h1>
+                    <span class="today" id="current-day">The Day</span> </span><span class="time" id="current-time">The
+                        Time</span>
+                    </br>
+                    <span class="currentDate"><span id="the-date">00</span> <span id="the-month">Month</span> <span id="the-year">year</span></span>
+                    </span>
+                    </span>
+
+                </section>
+
+                <section class="topRight">
+                    <h1 class="currentTemp">
+                        <span id="temperature">16</span> <span class="degrees" id="celsius">°C </span>
+                        <!--<span class="degrees" id="fahrenheit">| °F</span>-->
+                    </h1>
+                    <h3 class="stats"> Precipitation: 0%
+                        <br>
+                        Humidity: 45%
+                        <br>
+                        Wind: 18mph
+                    </h3>
+                </section>
+            </header>
+
+            <img src="images/cloudSitting.svg" alt="Sitting on a Cloud" class="logo">
+            <br>
+
+            <div class="searchEngine">
+                <form id="search-city">
+                    <input class="searchBar" type="text" id="input-city" placeholder="Enter City Here" />
+                    <input class="searchButton faInput" type="submit" value="&#Xf689" />
+                </form>
+                <!--<button class="fas locationButton" type="button"> &#xf3c5 </button>-->
+            </div>
+
+
+            <div class="row days">
+
+                <div class="col day1">
+                    <h4 class="weekDays"> fri </h4>
+                    <span class="faInput dailyIcon"> &#xf6c4</span>
+                    <br>
+                    <span class="highLow"><strong>83°</strong>/70°</span>
+                </div>
+
+                <div class="col day2">
+                    <h4 class="weekDays"> sat </h4>
+                    <span class="faInput dailyIcon"> &#xf6c4</span>
+                    <br>
+                    <span class="highLow"><strong>88°</strong>/69°</span>
+                </div>
+
+                <div class="col day3">
+                    <h4 class="weekDays"> sun </h4>
+                    <span class="faInput dailyIcon"> &#xf6c4</span>
+                    <br>
+                    <span class="highLow"><strong>92°</strong>/68°</span>
+                </div>
+
+                <div class="col day4">
+                    <h4 class="weekDays"> mon </h4>
+                    <span class="faInput dailyIcon"> &#xf6c4</span>
+                    <br>
+                    <span class="highLow"><strong>93°</strong>/72°</span>
+                </div>
+
+                <div class="col day5">
+                    <h4 class="weekDays"> tue </h4>
+                    <span class="faInput dailyIcon"> &#xf0e7</span>
+                    <br>
+                    <span class="highLow"><strong>85°</strong>/70°</span>
+                </div>
+
+            </div>
+            <br>
+            <span class="footer">Coded by <a href="http://instagram.com/soyeliani" target="_blank"
+                    class="credit">Eliani</a></span>
+        </section>
+
+        <script src="src/index.js"></script>
+
+
+    </div>
+</body>
+
+</html>
