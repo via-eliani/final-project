@@ -54,27 +54,35 @@ function searchCity() {
   search.addEventListener("submit", changeCity);
 }
 //called from addEventListener
+//calls upperCaseCity function
 //changes display of city when user enters input
 //connects to Weather API
 //calls displayTemp function
 function changeCity(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#input-city");
-  let theCity = document.querySelector("#the-city");
-  theCity.innerHTML = `${inputCity.value}`;
-
+  let capitalizedCity = upperCaseCity(inputCity.value);
+  let cityHeader = document.querySelector("#the-city");
+  cityHeader.innerHTML = `${capitalizedCity}`;
   let apiKey = `f655251e7aa74c3031f8eb126912bec6`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemp);
 }
 //called from changeCity function
+//inputCity.value is passed as parameter
+//capitalizes the first letter of the city
+function upperCaseCity(lowerCity) {
+  let upperCity = lowerCity[0].toUpperCase() + lowerCity.slice(1);
+  //console.log(upperCity);
+  return upperCity;
+}
+
+//called from changeCity function
 //obtains current temperature in C degrees
 //changes display of temperature
 function displayTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
-  //console.log(currentTemp);
-
   let theTemp = document.querySelector("#temperature");
   theTemp.innerHTML = `${currentTemp}`;
 }
@@ -97,9 +105,11 @@ function getCoordinates(position) {
 
 //***START: calls to functions***
 
+// W O R K  I N  P R O G R E S S
 //calls function getPosition if user clicks current location button
 //let button = document.querySelector("button");
 //button.addEventListener("click", getPosition);
+
 //calls displayDate function
 displayDate();
 //calls searchCity function
