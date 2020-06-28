@@ -39,41 +39,32 @@ function displayDate() {
 }
 //obtains user input
 //calls changeCity function
-function searchCity() {
+function submitCity() {
   let search = document.querySelector("#search-city");
-  search.addEventListener("submit", changeCity);
+  search.addEventListener("submit", searchCity);
 }
 //called from addEventListener
-//calls upperCaseCity function
-//changes display of city when user enters input
+//obtains user input
 //connects to Weather API
-//calls displayTemp function
-function changeCity(event) {
+//calls changeDisplay function
+function searchCity(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#input-city");
-  let capitalizedCity = upperCaseCity(inputCity.value);
-  let cityHeader = document.querySelector("#the-city");
-  cityHeader.innerHTML = `${capitalizedCity}`;
   let apiKey = `f655251e7aa74c3031f8eb126912bec6`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(displayTemp);
+  axios.get(apiUrl).then(changeDisplay);
 }
-//called from changeCity function
-//inputCity.value is passed as parameter
-//capitalizes the first letter of the city
-function upperCaseCity(lowerCity) {
-  let upperCity = lowerCity[0].toUpperCase() + lowerCity.slice(1);
-  //console.log(upperCity);
-  return upperCity;
-}
-
 //called from changeCity function
 //obtains current temperature in C degrees
 //changes display of temperature
-function displayTemp(response) {
+function changeDisplay(response) {
+  console.log(response.data.name); //checks if working
+  let cityName = response.data.name;
+  let cityHeader = document.querySelector("#the-city");
+  cityHeader.innerHTML = `${cityName}`;
   let currentTemp = Math.round(response.data.main.temp);
-  let theTemp = document.querySelector("#temperature");
+  let theTemp = document.querySelector("#default-temp");
   theTemp.innerHTML = `${currentTemp}`;
 }
 //called by addEventListener
@@ -103,4 +94,4 @@ function getCoordinates(position) {
 //calls displayDate function
 displayDate();
 //calls searchCity function
-searchCity();
+submitCity();
