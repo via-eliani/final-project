@@ -70,6 +70,14 @@ img {
   bottom: 10px;
   letter-spacing: 1px;
 }
+.active {
+  color: #2f2e41;
+}
+.active:hover {
+  text-decoration: none;
+  cursor: default;
+  color: #2f2e41;
+}
 .stats {
   font-size: 20px;
   position: relative;

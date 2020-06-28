@@ -100,6 +100,8 @@ function getTemp(lat, lon) {
 }
 function displayFahrenheitTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fTemp = (celsiusTemp * 9) / 5 + 32;
   let temperature = document.querySelector("#the-temperature");
 
@@ -107,6 +109,8 @@ function displayFahrenheitTemp(event) {
 }
 function displayCelsiusTemp(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let temperature = document.querySelector("#the-temperature");
   temperature.innerHTML = celsiusTemp;
 }
