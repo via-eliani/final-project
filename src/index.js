@@ -27,12 +27,13 @@ function displayDate() {
   let minutes = now.getMinutes();
   let date = now.getDate();
   let month = months[now.getMonth()];
-  //changing display of time
+  //display of time
   let time = document.querySelector("#current-time");
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   time.innerHTML = `${hour}:${minutes}`;
+  //diplay of day
   let today = document.querySelector("#the-day");
   today.innerHTML = `${day}`;
 }
@@ -86,8 +87,7 @@ function getCoordinates(position) {
 
 // W O R K  I N  P R O G R E S S
 //calls function getPosition if user clicks current location button
-//let button = document.querySelector("button");
-//button.addEventListener("click", getPosition);
+//getPosition();
 
 //calls displayDate function
 displayDate();
