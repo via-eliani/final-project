@@ -105,6 +105,11 @@ function displayFahrenheitTemp(event) {
 
   temperature.innerHTML = Math.round(fTemp);
 }
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#the-temperature");
+  temperature.innerHTML = celsiusTemp;
+}
 //***END: defined functions***
 
 //***START: calls to functions***
@@ -117,6 +122,9 @@ currentLocation.addEventListener("click", getPosition);
 //initializes fahrenheitLink to the link in HTML
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+//initializes celsiusLink to the link in HTML
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 //calls getPosition function
 getPosition();
 //calls displayDate function
