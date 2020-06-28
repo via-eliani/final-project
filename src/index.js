@@ -25,27 +25,30 @@ function displayDate() {
   let day = days[now.getDay()];
   let hour = now.getHours();
   let minutes = now.getMinutes();
+
+  //changing display of date
+  let date = now.getDate();
+  //let theDate = document.querySelector("#the-date");
+  //theDate.innerHTML = `${date}`;
+  //changing display of month
+  let month = months[now.getMonth()];
+  //let theMonth = document.querySelector("#the-month");
+  //theMonth.innerHTML = `${month}`;
+  //changing display of year
+  let year = now.getFullYear();
+  //let theYear = document.querySelector("#the-year");
+  //theYear.innerHTML = `${year}`;
+
   //changing display of day
   let today = document.querySelector("#current-day");
-  today.innerHTML = `${day}`;
+  today.innerHTML = `${day} ${date} ${month}`;
+
   //changing display of time
   let time = document.querySelector("#current-time");
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
   time.innerHTML = `${hour}:${minutes}`;
-  //changing display of date
-  let date = now.getDate();
-  let theDate = document.querySelector("#the-date");
-  theDate.innerHTML = `${date}`;
-  //changing display of month
-  let month = months[now.getMonth()];
-  let theMonth = document.querySelector("#the-month");
-  theMonth.innerHTML = `${month}`;
-  //changing display of year
-  let year = now.getFullYear();
-  let theYear = document.querySelector("#the-year");
-  theYear.innerHTML = `${year}`;
 }
 //obtains user input
 //calls changeCity function
