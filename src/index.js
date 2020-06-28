@@ -38,7 +38,7 @@ function displayDate() {
   time.innerHTML = `${hour}:${minutes}`;
 }
 //obtains user input
-//calls changeCity function
+//calls searchCity within addEventListener
 function submitCity() {
   let search = document.querySelector("#search-city");
   search.addEventListener("submit", searchCity);
@@ -55,11 +55,14 @@ function searchCity(event) {
 
   axios.get(apiUrl).then(changeDisplay);
 }
-//called from changeCity function
+//called from searchCity function
 //obtains current temperature in C degrees
 //changes display of temperature
 function changeDisplay(response) {
-  console.log(response.data.name); //checks if working
+  console.log(response.data);
+  let userTime = new Date(response.data.dt * 1000);
+  console.log(userTime);
+
   let cityName = response.data.name;
   let cityHeader = document.querySelector("#the-city");
   cityHeader.innerHTML = `${cityName}`;
