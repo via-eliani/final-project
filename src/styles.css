@@ -34,7 +34,7 @@ img {
     #b5aee4 100%
   );
 }
-.dayAndTime {
+.topLeft {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -44,6 +44,9 @@ img {
   letter-spacing: 5px;
   font-size: 40px;
 }
+.time {
+  font-size: 20px;
+}
 .forecast {
   list-style-type: none;
   margin: 0;
@@ -51,30 +54,23 @@ img {
   font-size: 25px;
   position: relative;
   left: 240px;
-  bottom: 133px;
+  bottom: 90px;
 }
 .currentTemp {
   position: relative;
   left: 55px;
 }
+.temperature {
+  font-size: 40px;
+}
 .forecast strong {
   position: relative;
   bottom: 10px;
 }
-.temperature {
-  font-size: 40px;
-}
-.degrees {
-  font-size: 18px;
-  position: relative;
-  top: -15px;
-}
-
 .stats {
+  font-size: 20px;
   position: relative;
-  bottom: 100px;
-  text-align: right;
-  font-size: 18px;
+  left: 15px;
 }
 
 .searchEngine {

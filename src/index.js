@@ -27,9 +27,6 @@ function displayDate() {
   let minutes = now.getMinutes();
   let date = now.getDate();
   let month = months[now.getMonth()];
-  //changing display of day
-  let today = document.querySelector("#current-day");
-  today.innerHTML = `${day} ${date} ${month}`;
   //changing display of time
   let time = document.querySelector("#current-time");
   if (minutes < 10) {
@@ -59,10 +56,6 @@ function searchCity(event) {
 //obtains current temperature in C degrees
 //changes display of temperature
 function changeDisplay(response) {
-  console.log(response.data);
-  let userTime = new Date(response.data.dt * 1000);
-  console.log(userTime);
-
   let cityName = response.data.name;
   let cityHeader = document.querySelector("#the-city");
   cityHeader.innerHTML = `${cityName}`;
