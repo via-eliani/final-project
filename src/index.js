@@ -1,5 +1,6 @@
 //***START: defined functions***
 
+//called from "main" function or changeDisplay function
 //defines day, hour, minutes, and time
 //changes HTML to display day and time
 function displayDate() {
@@ -25,17 +26,13 @@ function displayDate() {
   let day = days[now.getDay()];
   let hour = now.getHours();
   let minutes = now.getMinutes();
-  let date = now.getDate();
-  let month = months[now.getMonth()];
-  //display of time
   let time = document.querySelector("#current-time");
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  time.innerHTML = `${hour}:${minutes}`;
-  //diplay of day
   let today = document.querySelector("#the-day");
-  today.innerHTML = `${day}`;
+  time.innerHTML = `${hour}:${minutes}`; //changes display of time
+  today.innerHTML = `${day}`; //changes display of day
 }
 //obtains user input
 //calls searchCity within addEventListener
@@ -57,26 +54,27 @@ function searchCity(event) {
 }
 //called from searchCity function or getTemp function
 //obtains current temperature in C degrees
-//changes display of temperature
-//changes display of humidity
-//changes display of wind
 //calls displayDate function
 function changeDisplay(response) {
   let cityName = response.data.name;
   let cityHeader = document.querySelector("#the-city");
-  cityHeader.innerHTML = `${cityName}`;
   let currentTemp = Math.round(response.data.main.temp);
-  let theTemp = document.querySelector("#default-temp");
-  theTemp.innerHTML = `${currentTemp}`;
+  let theTemp = document.querySelector("#the-temperature");
   let humidity = response.data.main.humidity;
   let theHumidity = document.querySelector("#the-humidity");
-  theHumidity.innerHTML = `${humidity}`;
   let wind = Math.round(response.data.wind.speed);
   let theWindSpeed = document.querySelector("#wind-speed");
-  theWindSpeed.innerHTML = `${wind}`;
+
+  celsiusTemp = Math.round(response.data.main.temp);
+
+  cityHeader.innerHTML = `${cityName}`; //changes display of city
+  theTemp.innerHTML = `${currentTemp}`; //changes display of temperature
+  theHumidity.innerHTML = `${humidity}`; //changes display of humidity
+  theWindSpeed.innerHTML = `${wind}`; //changes display of wind speed
+
   displayDate();
 }
-//called by addEventListener
+//called from "main" function or by addEventListener
 //obtains position of user
 //calls getCoordinates function
 function getPosition() {
@@ -100,17 +98,28 @@ function getTemp(lat, lon) {
 
   axios.get(apiUrl).then(changeDisplay);
 }
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperature = document.querySelector("#the-temperature");
+
+  temperature.innerHTML = Math.round(fTemp);
+}
 //***END: defined functions***
 
 //***START: calls to functions***
 
+let celsiusTemp = null;
+//initializes currentLocation to the button in HTML
+let currentLocation = document.querySelector("#location");
+//calls function getPosition if user clicks current location button
+currentLocation.addEventListener("click", getPosition);
+//initializes fahrenheitLink to the link in HTML
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 //calls getPosition function
 getPosition();
 //calls displayDate function
 displayDate();
 //calls searchCity function
 submitCity();
-//initializes currentLocation to the button in HTML
-let currentLocation = document.querySelector("#location");
-//calls function getPosition if user clicks current location button
-currentLocation.addEventListener("click", getPosition);
