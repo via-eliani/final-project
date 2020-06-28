@@ -44,17 +44,25 @@ img {
   letter-spacing: 5px;
   font-size: 40px;
 }
+.forecast {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  position: relative;
+  left: 240px;
+  bottom: 133px;
+}
 .currentTemp {
   position: relative;
-  bottom: 105px;
-  text-align: right;
+  left: 55px;
 }
-.currentDate {
-  font-size: 20px;
-}
-.topRight {
+.forecast strong {
   position: relative;
-  top: -20px;
+  bottom: 10px;
+}
+.temperature {
+  font-size: 40px;
 }
 .degrees {
   font-size: 18px;
