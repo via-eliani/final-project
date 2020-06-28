@@ -58,6 +58,7 @@ function searchCity(event) {
 //called from searchCity function
 //obtains current temperature in C degrees
 //changes display of temperature
+//calls displayDate function
 function changeDisplay(response) {
   let cityName = response.data.name;
   let cityHeader = document.querySelector("#the-city");
@@ -65,11 +66,12 @@ function changeDisplay(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let theTemp = document.querySelector("#default-temp");
   theTemp.innerHTML = `${currentTemp}`;
+  displayDate();
 }
 //called by addEventListener
 //obtains position of user
 //calls getCoordinates function
-/*function getPosition() {
+function getPosition() {
   navigator.geolocation.getCurrentPosition(getCoordinates);
 }
 //called by getPosition function
@@ -77,9 +79,7 @@ function changeDisplay(response) {
 function getCoordinates(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  console.log(lat); //tests if working
-  console.log(lon); //tests if working
-}*/
+}
 
 //***END: defined functions***
 
@@ -87,7 +87,9 @@ function getCoordinates(position) {
 
 // W O R K  I N  P R O G R E S S
 //calls function getPosition if user clicks current location button
-//getPosition();
+
+let currentLocation = document.querySelector("#location");
+currentLocation.addEventListener("click", getPosition());
 
 //calls displayDate function
 displayDate();
