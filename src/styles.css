@@ -38,22 +38,16 @@ img {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 25px;
 }
 .currentCity {
   letter-spacing: 5px;
+  font-size: 40px;
 }
 .currentTemp {
   position: relative;
   bottom: 105px;
   text-align: right;
-}
-.today {
-  font-size: 28px;
-  letter-spacing: 2px;
-}
-.time {
-  font-size: 25px;
 }
 .currentDate {
   font-size: 20px;
