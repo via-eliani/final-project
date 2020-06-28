@@ -55,9 +55,11 @@ function searchCity(event) {
 
   axios.get(apiUrl).then(changeDisplay);
 }
-//called from searchCity function
+//called from searchCity function or getTemp function
 //obtains current temperature in C degrees
 //changes display of temperature
+//changes display of humidity
+//changes display of wind
 //calls displayDate function
 function changeDisplay(response) {
   let cityName = response.data.name;
@@ -66,6 +68,12 @@ function changeDisplay(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let theTemp = document.querySelector("#default-temp");
   theTemp.innerHTML = `${currentTemp}`;
+  let humidity = response.data.main.humidity;
+  let theHumidity = document.querySelector("#the-humidity");
+  theHumidity.innerHTML = `${humidity}`;
+  let wind = Math.round(response.data.wind.speed);
+  let theWindSpeed = document.querySelector("#wind-speed");
+  theWindSpeed.innerHTML = `${wind}`;
   displayDate();
 }
 //called by addEventListener
@@ -82,6 +90,10 @@ function getCoordinates(position) {
 
   getTemp(lat, lon);
 }
+//called by getCoordinated function
+//retrieves two parameters
+//finds user location with latitude and longitude
+//calls changeDisplay function
 function getTemp(lat, lon) {
   let apiKey = `f655251e7aa74c3031f8eb126912bec6`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -92,8 +104,8 @@ function getTemp(lat, lon) {
 
 //***START: calls to functions***
 
-// W O R K  I N  P R O G R E S S
-
+//calls getPosition function
+getPosition();
 //calls displayDate function
 displayDate();
 //calls searchCity function

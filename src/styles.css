@@ -60,7 +60,7 @@ img {
 }
 .currentTemp {
   position: relative;
-  left: 55px;
+  left: 30px;
 }
 .temperature {
   font-size: 40px;
@@ -68,6 +68,7 @@ img {
 .forecast strong {
   position: relative;
   bottom: 10px;
+  letter-spacing: 1px;
 }
 .stats {
   font-size: 20px;
@@ -97,10 +98,10 @@ img {
 }
 .locationButton {
   color: #2f2e41;
-  font-size: 18px;
+  font-size: 25px;
   position: relative;
   left: 30px;
-  bottom: 12px;
+  bottom: 7px;
   border-radius: 100%;
   border-style: none;
   padding: 7px;
