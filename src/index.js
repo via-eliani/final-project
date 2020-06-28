@@ -33,6 +33,8 @@ function displayDate() {
     minutes = `0${minutes}`;
   }
   time.innerHTML = `${hour}:${minutes}`;
+  let today = document.querySelector("#the-day");
+  today.innerHTML = `${day}`;
 }
 //obtains user input
 //calls searchCity within addEventListener

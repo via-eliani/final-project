@@ -20,7 +20,8 @@
             <header>
                     <ul class="topLeft">
                         <li class="currentCity" id="the-city">Orlando</li>
-                        <li class="time">Updated <span id="current-time">The Time</span></li>
+                        <li class="time">Updated: <span id="the-day">The Day</span> <span id="current-time">The Time</span></li>
+                        <li>  </li>
                     </ul>
                     
                     <ul class="forecast">
@@ -31,15 +32,17 @@
             </header>
 
             <img src="images/cloudSitting.svg" alt="Sitting on a Cloud" class="logo">
-            <br>
-
+        
+            
             <div class="searchEngine">
                 <form id="search-city">
                     <input class="searchBar" type="text" id="input-city" placeholder="Enter City Here" />
                     <input class="searchButton faInput" type="submit" value="&#Xf689" />
                 </form>
-                <!--<button class="fas locationButton" type="button"> &#xf3c5 </button>-->
+            <a class="currentLocation" id="location-link" href="">Current Location</a>
             </div>
+
+        
 
 
             <div class="row days">
