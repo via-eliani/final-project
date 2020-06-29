@@ -128,9 +128,15 @@ img {
 .faInput {
   font-family: FontAwesome, ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
 }
-.weekDays {
+.hours:hover {
+  opacity: 0.5;
+  transition: all 150ms ease-in-out;
+  background-color: #a4a2dc;
+  border-radius: 5px;
+}
+.times {
   font-weight: lighter;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
 }
 .dailyIcon {
   font-size: 30px;

@@ -88,14 +88,18 @@ function retrieveHourly(city) {
   axios.get(apiUrl).then(displayHourly);
 }
 function displayHourly(response) {
+  //local variables
+  let forecast = null;
+  //query selectors
   let hourlyElement = document.querySelector("#hourly");
-  console.log(response.data);
-
-  for (let index = 0; index < 4; index++) {
-    let forecast = response.data.list[index];
+  //innerHTML changes
+  hourlyElement.innerHTML = null;
+  //for loop that displays the hourly forecast
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
     hourlyElement.innerHTML += `
-  <div class="col day1">
-      <h4 class="weekDays"> ${formatTime(forecast.dt * 1000)} </h4>
+  <div class="col-2 hours">
+      <h4 class="times"> ${formatTime(forecast.dt * 1000)} </h4>
         <span class="faInput dailyIcon"> &#xf6c4</span>
           <br>
       <span class="highLow"><strong>${Math.round(
