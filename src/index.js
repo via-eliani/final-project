@@ -80,8 +80,8 @@ function changeDisplay(response) {
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  icon.setAttribute("alt", response.data.weather[0].description);
+  ); //changes attribute of HTMl element
+  icon.setAttribute("alt", response.data.weather[0].description); //changes attribute of HTML element
   //call to displayDate function
   displayDate();
   //call to retrieveHourly function
@@ -96,6 +96,10 @@ function retrieveHourly(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayHourly);
 }
+/* displayHourly function
+-- called from retrieveHourly function
+-- recieves response as parameter
+-- uses for loop to make innerHTML changes*/
 function displayHourly(response) {
   //local variables
   let forecast = null;
@@ -180,6 +184,7 @@ function displayImperial(event) {
   let temperature = document.querySelector("#the-temperature");
   let wind = document.querySelector("#wind-speed");
   let unit = document.querySelector("#wind-unit");
+  let highLow = document.querySelector("#high-low");
   //innerHTML chagnes
   temperature.innerHTML = Math.round(fTemp); //changes display of temperature
   wind.innerHTML = Math.round(cityWind / 1.609); //changes display of wind speed

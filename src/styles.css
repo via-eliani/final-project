@@ -87,7 +87,10 @@ img {
   position: relative;
   left: 15px;
 }
-
+.middle {
+  position: relative;
+  left: 70px;
+}
 .searchEngine {
   position: relative;
   left: 70px;
