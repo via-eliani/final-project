@@ -100,7 +100,9 @@ function displayHourly(response) {
     hourlyElement.innerHTML += `
   <div class="col-2 hours">
       <h4 class="times"> ${formatTime(forecast.dt * 1000)} </h4>
-        <span class="faInput dailyIcon"> &#xf6c4</span>
+        <img class="hourlyIcon" src= "http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png">
           <br>
       <span class="highLow"><strong>${Math.round(
         forecast.main.temp_max
