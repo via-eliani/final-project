@@ -18,12 +18,16 @@
     <div class="container">
         <section class="weatherApp">
             <header>
+
+                <div class="row header">
+                    <div class="col-8">
                     <ul class="topLeft">
                         <li class="currentCity" id="the-city"></li>
                         <li class="time">Updated: <span id="the-day">The Day</span> <span id="current-time">The Time</span></li>
                         <li>  </li>
                     </ul>
-                    
+                    </div>
+                    <div class="col-4">
                     <ul class="forecast">
                         <li class="currentTemp">
                             <span class="temperature" id="the-temperature"></span>
@@ -37,59 +41,30 @@
                             <span id="wind-unit">km/h</span>
                         </li>
                     </ul>
+                    </div>
+                </div>
             </header>
 
             <img src="images/cloudSitting.svg" alt="Sitting on a Cloud" class="logo">
-        
-            <button class="locationButton faInput" id="location"[]> &#xf3c5</button>
+                    <button class="locationButton faInput" id="location"[]> &#xf3c5</button>
             <div class="searchEngine">
                 <form id="search-city">
                     <input class="searchBar" type="text" id="input-city" placeholder="Enter City Here" />
                     <input class="searchButton faInput" type="submit" value="&#Xf689" />
                 </form>
-            
             </div>
 
         
 
 
-            <div class="row days">
+            <div class="row hourlyForecast" id="hourly">
 
                 <div class="col day1">
-                    <h4 class="weekDays"> fri </h4>
+                    <h4 class="weekDays"> 00:00 </h4>
                     <span class="faInput dailyIcon"> &#xf6c4</span>
                     <br>
-                    <span class="highLow"><strong>83°</strong>/70°</span>
+                    <span class="highLow"><strong>°</strong>/°</span>
                 </div>
-
-                <div class="col day2">
-                    <h4 class="weekDays"> sat </h4>
-                    <span class="faInput dailyIcon"> &#xf6c4</span>
-                    <br>
-                    <span class="highLow"><strong>88°</strong>/69°</span>
-                </div>
-
-                <div class="col day3">
-                    <h4 class="weekDays"> sun </h4>
-                    <span class="faInput dailyIcon"> &#xf6c4</span>
-                    <br>
-                    <span class="highLow"><strong>92°</strong>/68°</span>
-                </div>
-
-                <div class="col day4">
-                    <h4 class="weekDays"> mon </h4>
-                    <span class="faInput dailyIcon"> &#xf6c4</span>
-                    <br>
-                    <span class="highLow"><strong>93°</strong>/72°</span>
-                </div>
-
-                <div class="col day5">
-                    <h4 class="weekDays"> tue </h4>
-                    <span class="faInput dailyIcon"> &#xf0e7</span>
-                    <br>
-                    <span class="highLow"><strong>85°</strong>/70°</span>
-                </div>
-
             </div>
             <br>
             <span class="footer"><a href="https://github.com/via-eliani/final-project" class="sourceLink">Open-Source Code</a> by Eliani</span>

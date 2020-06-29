@@ -88,7 +88,35 @@ function retrieveHourly(city) {
   axios.get(apiUrl).then(displayHourly);
 }
 function displayHourly(response) {
+  let hourlyElement = document.querySelector("#hourly");
   console.log(response.data);
+
+  for (let index = 0; index < 4; index++) {
+    let forecast = response.data.list[index];
+    hourlyElement.innerHTML += `
+  <div class="col day1">
+      <h4 class="weekDays"> ${formatTime(forecast.dt * 1000)} </h4>
+        <span class="faInput dailyIcon"> &#xf6c4</span>
+          <br>
+      <span class="highLow"><strong>${Math.round(
+        forecast.main.temp_max
+      )}°</strong>/${Math.round(forecast.main.temp_min)}°</span>
+  </div>`;
+  }
+}
+/*formatTime function
+-- called from displayHourly function
+-- receives timestamp parameter 
+-- reformats the time from dt to hours and minutes
+-- returns the proper time */
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
 }
 /*getPosition function
 -- called from "main" function or by addEventListener

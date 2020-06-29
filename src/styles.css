@@ -17,7 +17,6 @@ img {
 }
 .weatherApp {
   display: block;
-  position: fixed;
   border: 0;
   border-radius: 7px;
   margin: 20px;
@@ -53,9 +52,6 @@ img {
   margin: 0;
   padding: 0;
   font-size: 25px;
-  position: relative;
-  left: 220px;
-  bottom: 87px;
   color: #2f2e41;
 }
 .currentTemp {
