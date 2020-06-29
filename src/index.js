@@ -61,6 +61,7 @@ function changeDisplay(response) {
   //local variables
   let cityName = response.data.name;
   let currentTemp = Math.round(response.data.main.temp);
+  let description = response.data.weather[0].description;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   //global variables
@@ -69,12 +70,14 @@ function changeDisplay(response) {
   //query selectors
   let cityHeader = document.querySelector("#the-city");
   let theTemp = document.querySelector("#the-temperature");
+  let theDescription = document.querySelector("#description");
   let theHumidity = document.querySelector("#the-humidity");
   let theWindSpeed = document.querySelector("#wind-speed");
   let icon = document.querySelector("#current-condition");
   //innerHTML changes
   cityHeader.innerHTML = `${cityName}`; //changes display of city
   theTemp.innerHTML = `${currentTemp}`; //changes display of temperature
+  theDescription.innerHTML = `${description}`; //changes display of description
   theHumidity.innerHTML = `${humidity}`; //changes display of humidity
   theWindSpeed.innerHTML = `${wind}`; //changes display of wind speed
   icon.setAttribute(

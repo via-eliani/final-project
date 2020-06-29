@@ -84,6 +84,7 @@ img {
 
 .stats {
   font-size: 20px;
+  text-transform: capitalize;
   position: relative;
   left: 15px;
 }
