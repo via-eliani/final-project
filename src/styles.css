@@ -54,7 +54,7 @@ img {
   padding: 0;
   font-size: 25px;
   position: relative;
-  left: 240px;
+  left: 220px;
   bottom: 87px;
   color: #2f2e41;
 }
@@ -67,8 +67,9 @@ img {
 }
 .forecast strong {
   position: relative;
-  bottom: 10px;
+  bottom: 15px;
   letter-spacing: 1px;
+  font-size: 20px;
 }
 .active {
   color: #2f2e41;
