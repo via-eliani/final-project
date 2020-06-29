@@ -142,6 +142,8 @@ img {
   border-radius: 5px;
 }
 .times {
+  position: relative;
+  right: 5px;
   font-weight: lighter;
   letter-spacing: 5px;
 }
@@ -152,9 +154,13 @@ img {
   color: #ffe8de;
   position: relative;
   top: 10px;
-  right: 5px;
+  right: 10px;
   filter: hue-rotate(-15deg) grayscale(10%) saturate(1) contrast(120%)
     sepia(60%);
+}
+.highLow {
+  position: relative;
+  left: 10px;
 }
 .footer {
   display: block;

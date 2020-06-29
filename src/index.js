@@ -13,6 +13,9 @@ function displayDate() {
   let hour = now.getHours();
   let minutes = now.getMinutes();
   let time = document.querySelector("#current-time");
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -68,11 +71,17 @@ function changeDisplay(response) {
   let theTemp = document.querySelector("#the-temperature");
   let theHumidity = document.querySelector("#the-humidity");
   let theWindSpeed = document.querySelector("#wind-speed");
+  let icon = document.querySelector("#current-condition");
   //innerHTML changes
   cityHeader.innerHTML = `${cityName}`; //changes display of city
   theTemp.innerHTML = `${currentTemp}`; //changes display of temperature
   theHumidity.innerHTML = `${humidity}`; //changes display of humidity
   theWindSpeed.innerHTML = `${wind}`; //changes display of wind speed
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
   //call to displayDate function
   displayDate();
   //call to retrieveHourly function
@@ -119,6 +128,9 @@ function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
   let minutes = date.getMinutes();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
