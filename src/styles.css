@@ -23,14 +23,7 @@ img {
   padding: 20px;
   max-width: 500px;
   font-family: "BenchNine", sans-serif;
-  background-image: linear-gradient(
-    to top,
-    #7474b0 37%,
-    #7e7ebb 50%,
-    #8389c7 62%,
-    #9795d4 75%,
-    #a2a1dc 87%,
-    #b5aee4 100%
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);) ;
   );
 }
 .topLeft {
